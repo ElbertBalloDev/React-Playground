@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -38,23 +38,45 @@ const ListItem = styled.li`
 	}
 `;
 
+const Bar = styled.div`
+  width: 35px;
+  height: 5px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+`
+
 const Navigation = () => {
+	const [width, setWidth] = useState(window.innerWidth);
+
+	window.addEventListener("resize", () => {
+		setWidth(window.innerWidth);
+  });
+
 	return (
 		<NavigationContainer>
-			<NavList>
-				<Anchor to="/">
-					<ListItem>HOME</ListItem>
-				</Anchor>
-				<Anchor to="/about">
-					<ListItem>ABOUT</ListItem>
-				</Anchor>
-				<Anchor to="/portfolio">
-					<ListItem>PORTFOLIO</ListItem>
-				</Anchor>
-				<Anchor to="/contact">
-					<ListItem>CONTACT</ListItem>
-				</Anchor>
-			</NavList>
+			{width > 1100 ? (
+				<NavList>
+					<Anchor to="/">
+						<ListItem>HOME</ListItem>
+					</Anchor>
+					<Anchor to="/about">
+						<ListItem>ABOUT</ListItem>
+					</Anchor>
+					<Anchor to="/portfolio">
+						<ListItem>PORTFOLIO</ListItem>
+					</Anchor>
+					<Anchor to="/contact">
+						<ListItem>CONTACT</ListItem>
+					</Anchor>
+				</NavList>
+			) : (
+				<div className="container">
+					<Bar></Bar>
+					<Bar></Bar>
+					<Bar></Bar>
+				</div>
+			)}
 		</NavigationContainer>
 	);
 };

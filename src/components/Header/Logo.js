@@ -13,7 +13,7 @@ const LogoH1 = styled(Link)`
 	height: 100%;
 	display: table-cell;
 	vertical-align: middle;
-	font-size: 40px;
+	font-size:calc(24px + 2vw);
 	font-weight: 300;
 	font-family: "Montserrat";
   text-shadow: 2px 2px #833ab4;

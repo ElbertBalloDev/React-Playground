@@ -1,28 +1,47 @@
 import React from "react";
 import styled from "styled-components";
+import headshot from "./headshot.png";
 
 const HomeWrapper = styled.div`
-  width: 40rem;
-  height: 40rem;
+  width:30rem;
+  height: 30rem;
+  min-height: 400px;
+  min-width: 400px;
   background-color: #fff;
   margin: auto;
+  border: 6px solid black;
   border-radius: 50px;
   display: flex;
+  display: block;
 `;
 
 const ProfileImage = styled.div`
-  width: 23rem;
-  height: 23rem;
+  background: url(${props => props.image});
+  background-size: contain;
+  background-position: center;
+  width: 15rem;
+  height: 15rem;
+  min-height: 180px;
+  min-width: 180px;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 8%;
   border-radius: 50%;
-  background-color: black;
+  border: 2px solid black;
+  margin-bottom: 0;
+`;
+
+const Name = styled.h1`
+margin-top:2vh;
+text-align: center;
+font-size:24px;
 `;
 
 const Home = () => {
 	return <>
   <HomeWrapper>
-  <ProfileImage />
+  <ProfileImage image={headshot}></ProfileImage>
+  <Name>Elbert Ballo</Name>
+  <Name>Software Engineer</Name>
   </HomeWrapper>
   </>;
 };
