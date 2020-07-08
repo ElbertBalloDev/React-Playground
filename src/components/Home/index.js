@@ -7,13 +7,15 @@ const HomeWrapper = styled.div`
   height: 30rem;
   min-height: 400px;
   min-width: 400px;
-  background-color: #fff;
+  background: rgba(255, 255, 255, 0.80);
   margin: auto;
-  border: 6px solid black;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 50px;
   display: flex;
   display: block;
+  box-shadow: 0px 0px 6px 0px black;
 `;
+
 
 const ProfileImage = styled.div`
   background: url(${props => props.image});
@@ -26,8 +28,9 @@ const ProfileImage = styled.div`
   margin: auto;
   margin-top: 8%;
   border-radius: 50%;
-  border: 2px solid black;
   margin-bottom: 0;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 0px 6px 0px black;
 `;
 
 const Name = styled.h1`

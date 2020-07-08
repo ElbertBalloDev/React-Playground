@@ -11,6 +11,8 @@ const HeaderContainer = styled.div`
   min-height: 10vh;
   position: sticky;
   top: 0;
+  z-index:10;
+
 `;
 
 const InnerHeader = styled.div`
